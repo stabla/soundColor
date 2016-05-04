@@ -16,9 +16,14 @@ Into js/sound.js
     var outputThreshold = 50;
     
   Currently, you can change the colors, but it's archaic
-  Into constructColor function, set the LightUp function as you want. For example, a Lightup(2, avgFirst[0]); increase the red color (avgFirst[0] correspond to red) by 2.  LightUp can increase from 1 to 5 max.
+  Into constructColor function, set the LightUp function as you want. For example, a 
+  
+  Lightup(2, avgFirst[0]); 
+  
+  increase the red color (avgFirst[0] correspond to red) by 2.  LightUp can increase from 1 to 5 max.
   
   avgX (it can be avgFirst or avgSecond) is our color. But avgX is an array, and in this array, the first value is red, the second value is green, and the last value is blue. So if you want to modify blue of the second array, change into constructColor function avgSecond[2], but where did I change it you ask yourself, right ?
+  
   The sType is the second you want to improve, so, into the avgFirst you will the change the even seconds arrays. It's quite difficult to understand, but, to increase by 3 the red color of the even second, change :
   
         avgFirst[0] = LightUp(1, avgFirst[0]); 
