@@ -1,4 +1,5 @@
 # soundColor
+Under MIT License. Created by me.
 
 First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic. 
 
