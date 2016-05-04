@@ -150,9 +150,9 @@ $(function () {
     // I want to construct my rgb color. 
     var constructColor = function (sType = '1') {
         if (sType === 1) {
-            avgFirst[0] = LightUp(1, avgFirst[0]);
-            avgFirst[1] = LightUp(1, avgFirst[1]);
-            avgFirst[2] = LightUp(1, avgFirst[2]);
+            avgFirst[0] = LightUp(1, avgFirst[0]); // Red color
+            avgFirst[1] = LightUp(1, avgFirst[1]); // Green color
+            avgFirst[2] = LightUp(1, avgFirst[2]); // Blue color
 
 
             r1 = avgFirst[0];
@@ -160,9 +160,9 @@ $(function () {
             b1 = avgFirst[2];
             color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
         } else if (sType === 2) {
-            avgSecond[0] = LightUp(1, avgSecond[0]);
-            avgSecond[1] = LightUp(1, avgSecond[1]);
-            avgSecond[2] = LightUp(1, avgSecond[2]);
+            avgSecond[0] = LightUp(1, avgSecond[0]); // Red color
+            avgSecond[1] = LightUp(1, avgSecond[1]); // Green color
+            avgSecond[2] = LightUp(1, avgSecond[2]); // Blue color
 
             r2 = avgSecond[0];
             g2 = avgSecond[1];
