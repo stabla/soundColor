@@ -1,6 +1,6 @@
 # soundColor
 
-@idkn : Think about that's my first rep on git, and I want to improve myself, I accept any advice or critic. 
+First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic. 
 
 Into index.html
   define your audio source, and place your sound into song/ folder. :
@@ -18,7 +18,7 @@ Into js/sound.js
   Currently, you can change the colors, but it's archaic
   Into constructColor function, set the LightUp function as you want. For example, a 
   
-  Lightup(2, avgFirst[0]); 
+    Lightup(2, avgFirst[0]); 
   
   increase the red color (avgFirst[0] correspond to red) by 2.  LightUp can increase from 1 to 5 max.
   
