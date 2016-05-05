@@ -1,5 +1,3 @@
-/*   Created by @idkn (github)  */ 
-
 html, body {
     box-sizing: border-box;
 }
@@ -40,7 +38,192 @@ html {
     font-size: 2.3em;
 }
 
+#git-logo {
+    height: 40px;
+    width: 40px;
+    fill: #fff;
+    vertical-align: middle;
+    margin-left: 18px;
+}
+
+a {
+    text-decoration: none;
+    text-transform: none;
+    color: #000;
+    font-weight: 100;
+    font-size: 0.6em;
+}
+
+
 .player-div {
     margin: 0 auto;
     width: 300px;
+}
+
+
+.s1, .s2 {
+    margin-top: 20px;
+}
+
+.set {
+    width: 240px;
+    height: 100%;
+    border-radius: 1px;
+    padding: 14px;
+    background: hsla(38, 48%, 95%, 1);
+    -moz-box-shadow:  1px 1px 3px 0px #656565;
+-webkit-box-shadow:  1px 1px 3px 0px #656565;
+-o-box-shadow:  1px 1px 3px 0px #656565;
+box-shadow:  1px 1px 3px 0px #656565;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=3);
+    min-width: 220px;
+    position: absolute;
+    left: -20px;
+    visibility: hidden;
+}
+
+.clr {
+    float: right;
+    width: 180px;
+    margin-left: 40px;
+}
+
+.red {
+    color: red;
+}
+
+.green { 
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.text {
+    margin-left: 20px;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+        /* fix for FF unable to apply focus style bug  */ 
+    margin: 0px 7px;
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 0;
+    /*required for proper track sizing in FF*/
+    width: 130px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 130px;
+    height: 2px;
+    background: #141414;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #aaa;
+    margin-top: -6px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+
+
+input[type=range]::-moz-range-track {
+    width: 130px;
+    height: 2px;
+    background: #141414;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #aaa;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+}
+
+
+
+
+
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #bbb;
+    height: 1px;
+}
+
+input[type=range]::-ms-track {
+    width: 300px;
+    height: 5px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #bbb;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #fff;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}
+
+.menu {
+    height: 30px;
+    margin: 10px;
+    position: relative;
 }

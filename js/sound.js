@@ -1,5 +1,222 @@
-// By @idkn (github). 
+// By @idkn on github. 
 // If any request about changing, improve my code, contact me giomebs@gmail.com, I will take any comment. 
+
+/*! slidereveal - v1.1.1 - 2016-03-04
+* https://github.com/nnattawat/slidereveal
+* Copyright (c) 2016 Nattawat Nonsung; Licensed MIT */
+!function(a){var b=function(a,b){var c=a.css("padding-"+b);return c?+c.substring(0,c.length-2):0},c=function(a){var c=b(a,"left"),d=b(a,"right");return a.width()+c+d+"px"},d=function(b,c){var d={width:250,push:!0,position:"left",speed:300,trigger:void 0,autoEscape:!0,show:function(){},shown:function(){},hidden:function(){},hide:function(){},top:0,overlay:!1,zIndex:1049,overlayColor:"rgba(0,0,0,0.5)"};this.setting=a.extend(d,c),this.element=b,this.init()};a.extend(d.prototype,{init:function(){var b=this,d=this.setting,e=this.element,f="all ease "+d.speed+"ms";e.css({position:"fixed",width:d.width,transition:f,height:"100%",top:d.top}).css(d.position,"-"+c(e)),d.overlay&&(e.css("z-index",d.zIndex),a("body").prepend("<div class='slide-reveal-overlay'></div>"),a(".slide-reveal-overlay").hide().css({position:"fixed",top:0,left:0,height:"100%",width:"100%","z-index":d.zIndex-1,"background-color":d.overlayColor}).click(function(){b.hide()})),e.data("slide-reveal",!1),d.push&&a("body").css({position:"relative","overflow-x":"hidden",transition:f,left:"0px"}),d.trigger&&d.trigger.length>0&&d.trigger.on("click.slideReveal",function(){e.data("slide-reveal")?b.hide():b.show()}),d.autoEscape&&a(document).on("keydown.slideReveal",function(c){0===a("input:focus, textarea:focus").length&&27===c.keyCode&&e.data("slide-reveal")&&b.hide()})},show:function(b){var d=this.setting,e=this.element;(void 0===b||b)&&d.show(e),d.overlay&&a(".slide-reveal-overlay").show(),e.css(d.position,"0px"),d.push&&("left"===d.position?a("body").css("left",c(e)):a("body").css("left","-"+c(e))),e.data("slide-reveal",!0),(void 0===b||b)&&setTimeout(function(){d.shown(e)},d.speed)},hide:function(b){var d=this.setting,e=this.element;(void 0===b||b)&&d.hide(e),d.push&&a("body").css("left","0px"),e.css(d.position,"-"+c(e)),e.data("slide-reveal",!1),(void 0===b||b)&&setTimeout(function(){d.overlay&&a(".slide-reveal-overlay").hide(),d.hidden(e)},d.speed)},toggle:function(a){var b=this.element;b.data("slide-reveal")?this.hide(a):this.show(a)}}),a.fn.slideReveal=function(b,c){return void 0!==b&&"string"==typeof b?this.each(function(){var d=a(this).data("slide-reveal-model");"show"===b?d.show(c):"hide"===b?d.hide(c):"toggle"===b&&d.toggle(c)}):this.each(function(){a(this).data("slide-reveal-model")&&a(this).data("slide-reveal-model").remove(),a(this).data("slide-reveal-model",new d(a(this),b))}),this}}(jQuery);
+
+
+$(document).ready(function() {
+    $('.set').css('visibility', 'visible');
+    
+    
+    (function ($) {
+  // Private attributes and method
+  var getPadding = function($el, side) {
+    var padding = $el.css('padding-' + side);
+    return padding ? +padding.substring(0, padding.length - 2) : 0;
+  };
+
+  var sidePosition = function($el) {
+    var paddingLeft = getPadding($el, 'left');
+    var paddingRight = getPadding($el, 'right');
+    return ($el.width() + paddingLeft + paddingRight) + "px";
+  };
+
+  var SlideReveal = function($el, options) {
+    // Define default setting
+    var setting = {
+      width: 250,
+      push: true,
+      position: "left",
+      speed: 300, //ms
+      trigger: undefined,
+      autoEscape: true,
+      show: function(){},
+      shown: function(){},
+      hidden: function(){},
+      hide: function(){},
+      top: 0,
+      overlay: false,
+      "zIndex": 1049,
+      overlayColor: 'rgba(0,0,0,0.5)'
+    };
+
+    // Attributes
+    this.setting = $.extend(setting, options);
+    this.element = $el;
+
+    this.init();
+  };
+
+  // Public methods
+  $.extend(SlideReveal.prototype, {
+    init: function() {
+      var self = this;
+      var setting = this.setting;
+      var $el = this.element;
+
+      var transition = "all ease " + setting.speed + "ms";
+      $el.css({
+        position: "fixed",
+        width: setting.width,
+        transition: transition,
+        height: "100%",
+        top: setting.top
+      })
+      .css(setting.position, "-" + sidePosition($el));
+
+      if (setting.overlay) {
+        $el.css('z-index', setting.zIndex);
+        $("body").prepend("<div class='slide-reveal-overlay'></div>");
+        $(".slide-reveal-overlay")
+        .hide()
+        .css({
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '100%',
+          width: '100%',
+          'z-index': setting.zIndex - 1,
+          'background-color': setting.overlayColor,
+        }).click(function() {
+          self.hide();
+        });
+      }
+
+      // Add close stage
+      $el.data("slide-reveal", false);
+
+      if (setting.push){
+        $("body").css({
+          position: "relative",
+          "overflow-x": "hidden",
+          transition: transition,
+          left: "0px"
+        });
+      }
+
+      // Attach trigger using click event
+      if (setting.trigger && setting.trigger.length > 0) {
+        setting.trigger.on('click.slideReveal', function() {
+          if (!$el.data("slide-reveal")) { // Show
+            self.show();
+          } else { // Hide
+            self.hide();
+          }
+        });
+      }
+
+      // Bind hide event to ESC
+      if (setting.autoEscape) {
+        $(document).on('keydown.slideReveal', function(e) {
+          if ($('input:focus, textarea:focus').length === 0) {
+            if (e.keyCode === 27 && $el.data("slide-reveal")) { // ESC
+              self.hide();
+            }
+          }
+        });
+      }
+    },
+
+    show: function(triggerEvents) {
+      var setting = this.setting;
+      var $el = this.element;
+
+      // trigger show() method
+      if (triggerEvents === undefined || triggerEvents) { setting.show($el); }
+
+      // show overlay
+      if (setting.overlay) {
+        $(".slide-reveal-overlay").show();
+      }
+
+      // slide the panel
+      $el.css(setting.position, "0px");
+      if (setting.push) {
+        if (setting.position === "left") {
+          $("body").css("left", sidePosition($el));
+        } else {
+          $("body").css("left", "-" + sidePosition($el));
+        }
+      }
+      $el.data("slide-reveal", true);
+
+      // trigger shown() method
+      if (triggerEvents === undefined || triggerEvents) {
+        setTimeout(function() {
+          setting.shown($el);
+        }, setting.speed);
+      }
+    },
+
+    hide: function(triggerEvents) {
+      var setting = this.setting;
+      var $el = this.element;
+
+      // trigger hide() method
+      if (triggerEvents === undefined || triggerEvents) { setting.hide($el); }
+
+      // hide the panel
+      if (setting.push) {
+        $("body").css("left", "0px");
+      }
+      $el.css(setting.position, "-" + sidePosition($el));
+      $el.data("slide-reveal", false);
+
+      // trigger hidden() method
+      if (triggerEvents === undefined || triggerEvents) {
+        setTimeout(function(){
+          // hide overlay
+          if (setting.overlay) {
+            $(".slide-reveal-overlay").hide();
+          }
+
+          setting.hidden($el);
+        }, setting.speed);
+      }
+    },
+
+    toggle: function(triggerEvents) {
+      var $el = this.element;
+      if ($el.data('slide-reveal')) {
+        this.hide(triggerEvents);
+      } else {
+        this.show(triggerEvents);
+      }
+    }
+  });
+
+  // jQuery collection methods
+  $.fn.slideReveal = function (options, triggerEvents) {
+    if (options !== undefined && typeof(options) === "string") {
+      this.each(function() {
+        var slideReveal = $(this).data('slide-reveal-model');
+
+        if (options === "show") {
+          slideReveal.show(triggerEvents);
+        } else if (options === "hide") {
+          slideReveal.hide(triggerEvents);
+        } else if (options === 'toggle') {
+          slideReveal.toggle(triggerEvents);
+        }
+      });
+    } else {
+      this.each(function() {
+        if ($(this).data('slide-reveal-model')) {
+          $(this).data('slide-reveal-model').remove();
+        }
+        $(this).data('slide-reveal-model', new SlideReveal($(this), options));
+      });
+    }
+
+    return this;
+  };
+
+}(jQuery));    
+})
+
 
 $(function () {
     var ctx;
@@ -36,7 +253,52 @@ $(function () {
     var lastOutput = 0; // Setting this to 0 initially will ensure it runs immediately
     var outputThreshold = 50; // in milliseconds
     var showMessageCounter = 0; // Setting this to 0 to have switching message
+    
+    var r1u = 1, g1u = 1, b1u = 1, r2u = 1, g2u = 1, b2u = 1;
+    
+    
+    r1u = document.getElementById("r1u");
+    g1u = document.getElementById("g1u");
+    b1u = document.getElementById("b1u");
+    r2u = document.getElementById("r2u");
+    g2u = document.getElementById("g2u");
+    b2u = document.getElementById("b2u");
 
+    var resR1u = document.getElementById("resR1u"),
+        resG1u = document.getElementById("resG1u"),
+        resB1u = document.getElementById("resB1u"),
+        resR2u = document.getElementById("resR2u"),
+        resG2u = document.getElementById("resG2u"),
+        resB2u = document.getElementById("resB2u");
+
+    
+r1u.addEventListener("input", function() {
+    resR1u.innerHTML = r1u.value;
+}, false); 
+
+g1u.addEventListener("input", function() {
+    resG1u.innerHTML = g1u.value;
+}, false); 
+
+b1u.addEventListener("input", function() {
+    resB1u.innerHTML = b1u.value;
+}, false); 
+
+r2u.addEventListener("input", function() {
+    resR2u.innerHTML = r2u.value;
+}, false); 
+
+g2u.addEventListener("input", function() {
+    resG2u.innerHTML = g2u.value;
+}, false); 
+
+b2u.addEventListener("input", function() {
+    resB2u.innerHTML = b2u.value;
+}, false); 
+
+
+ 
+    
     ///////// FUNCTIONS LIBRARY /////////
     // EVEN SECONDS ARE DEFINE BY sType (1)
     // ODD SECONDS ARE DEFINE BY sType (2)
@@ -150,9 +412,9 @@ $(function () {
     // I want to construct my rgb color. 
     var constructColor = function (sType = '1') {
         if (sType === 1) {
-            avgFirst[0] = LightUp(1, avgFirst[0]); // Red color
-            avgFirst[1] = LightUp(1, avgFirst[1]); // Green color
-            avgFirst[2] = LightUp(1, avgFirst[2]); // Blue color
+            avgFirst[0] = LightUp(r1u.value, avgFirst[0]);
+            avgFirst[1] = LightUp(g1u.value, avgFirst[1]);
+            avgFirst[2] = LightUp(b1u.value, avgFirst[2]);
 
 
             r1 = avgFirst[0];
@@ -160,9 +422,9 @@ $(function () {
             b1 = avgFirst[2];
             color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
         } else if (sType === 2) {
-            avgSecond[0] = LightUp(1, avgSecond[0]); // Red color
-            avgSecond[1] = LightUp(1, avgSecond[1]); // Green color
-            avgSecond[2] = LightUp(1, avgSecond[2]); // Blue color
+            avgSecond[0] = LightUp(r2u.value, avgSecond[0]);
+            avgSecond[1] = LightUp(g2u.value, avgSecond[1]);
+            avgSecond[2] = LightUp(b2u.value, avgSecond[2]);
 
             r2 = avgSecond[0];
             g2 = avgSecond[1];
@@ -180,7 +442,7 @@ $(function () {
         var count = 0;
         for (var i = data.length; i--;) {
             count += data[i];
-            if (count >= 1) { // is data sum more or equal to 1 ? if yes, then i launch everything, because if it is not, it's running for nothing.
+            if (count >= 1) {
                 if (new Date().valueOf() - lastOutput > outputThreshold) {
                     if (showMessageCounter === 0 || showMessageCounter % 2 === 0) {
                         if (showMessageCounter === 0) {
@@ -211,7 +473,10 @@ $(function () {
                         background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
                     });
 
-                    $('.text').css({
+                    $('.blank').css({
+                        color: "#fff"
+                    });
+                    $('a').css({
                         color: "#fff"
                     });
                 }
@@ -228,4 +493,9 @@ $(function () {
     });
     update();
 
+});
+
+
+$('#slider').slideReveal({
+    trigger: $("#trigger")
 });

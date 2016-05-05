@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--  Created by @idkn (github) !-->
 <html>
     <head>
         <title> soundColor </title>
@@ -7,15 +6,72 @@
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300" rel="stylesheet" type="text/css">
         <script src="js/jquery-2.2.3.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     </head>
     <body>
         <div class="back" id="back"></div>
+        <div id="slider">
+        <div class="set">
+        <span class="text">Change the first set of colors :</span>
+        <span class="text" style="color: #474747 !important;"> Press <strong> ESC </strong> to close</span>
+         <div class="s1">
+           <span class="text"> SET LEFT COLORS </span>
+           <div class="clr">
+               <span class=" red">Red : <span id="resR1u"></span></span>
+               <div class="inputDiv">0<input type="range" min="0" max="5" id="r1u" value="1">5</div>
+               
+           </div>
+           <div class="clr">
+               <span class=" green">Green : <span id="resG1u"></span></span>
+               <div class="inputDiv">0<input type="range" min="0" max="5" id="g1u" value="1">5</div>
+               
+           </div>
+           <div class="clr">
+               <span class=" blue">Blue : <span id="resB1u"></span></span>
+               <div class="inputDiv">0<input type="range" min="0" max="5" id="b1u" value="1">5</div>
+               
+           </div>
+           
+         </div> 
+         <div class="s2 ">
+           <span class="text"> SET RIGHT COLORS </span>
+           <div class="clr">
+               <span class=" red">Red : <span id="resR2u"></span></span>
+               <div class="inputDiv">
+                 0<input type="range" min="0" max="5" id="r2u" value="1">5  
+               </div>
+               
+           </div>
+           <div class="clr">
+               <span class=" green">Green : <span id="resG2u"></span></span>
+               <div class="inputDiv">
+                  0<input type="range" min="0" max="5" id="g2u" value="1">5 
+               </div>
+               
+           </div>
+           <div class="clr">
+               <span class=" blue">Blue : <span id="resB2u"></span></span>
+               <div class="inputDiv">
+                  0<input type="range" min="0" max="5" id="b2u" value="1">5
+               </div>  
+           </div>      
+         </div>  
+      </div>
+  </div>
+       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="trigger" class="menu" version="1.1" viewbox="0 0 24 24" enable-background="new 0 0 24 24">
+  <g>
+    <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" fill="#FFFFFF"/>
+    <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" fill="#FFFFFF"/>
+    <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" fill="#FFFFFF"/>
+  </g>
+</svg>
         <div class="enteringSound">
-            <p class="headText text" style="color= #000;"> Sound : Artist - Song's title </p>
+            <p class="headText blank" style="color= #000;"> Sound : Artist's Name - Song's title </p>
         </div>
         <div class="player-div">
-            <audio src="song/YourSound.mp3" id="player" controls></audio>
+            <audio src="song/gothamreckoning.mp3" id="player" controls></audio>
         </div>
+
         <script src="js/sound.js"></script>
     </body>
 </html>
