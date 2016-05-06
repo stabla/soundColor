@@ -15,8 +15,8 @@ First, I want to say to you to think about that's my first rep on git, and I wan
   
   
 ###Into js/sound.js
-  You can change the value of speed, but I haven't create colors transition yet, so it should be a little bit awful
-    change outPutThreshold (default value is to 50ms)
+  You can change the value of speed, but I haven't create colors transition yet, so it should be a little bit awful.
+    Change outPutThreshold (default value is to 50ms) to have a better effects.
     
     var outputThreshold = 50;
     
