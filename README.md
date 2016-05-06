@@ -50,7 +50,8 @@ run your chrome with this command
 >chrome.exe --disable-web-security 
 
 
-### Special remerciement
+### Special thanks
 I want to thanks Web Audio API developpers.
+
 [SlideReveal]((http://nnattawat.github.io/slideReveal/) of @nnattawat is really usefull 
 
