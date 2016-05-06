@@ -1,3 +1,5 @@
+
+
 // By @idkn on github. 
 // If any request about changing, improve my code, contact me giomebs@gmail.com, I will take any comment. 
 
@@ -9,7 +11,7 @@
 
 $(document).ready(function() {
     $('.set').css('visibility', 'visible');
-    
+   
     
     (function ($) {
   // Private attributes and method
@@ -123,7 +125,7 @@ $(document).ready(function() {
     show: function(triggerEvents) {
       var setting = this.setting;
       var $el = this.element;
-
+         
       // trigger show() method
       if (triggerEvents === undefined || triggerEvents) { setting.show($el); }
 
@@ -218,12 +220,19 @@ $(document).ready(function() {
 })
 
 
-$(function () {
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+        if (isIE) {
+                        $('.headText').replaceWith("Not available on Internet Explorer (beacause IE not supporting Web Audio API). Make your life easier, better and developper's life, use Mozilla Firefox or whatever else. Thank you!");
+                        $('audio').hide();
+                    }
+
+$(function () {;
     var ctx;
     if (typeof AudioContext !== "undefined") {
         ctx = new AudioContext();
     } else if (typeof webkitAudioContext !== "undefined") {
         ctx = new webkitAudioContext();
+
     } else {
         $(".hideIfNoApi").hide();
         $(".showIfNoApi").show();
@@ -233,7 +242,7 @@ $(function () {
     var analyser = ctx.createAnalyser();
     analyser.fftSize = 64;
     var data = new Uint8Array(analyser.frequencyBinCount);
-
+console.log("slt");
     // All var needed outside the functions
     var storageOne = [];
     var storageTwo = [];
@@ -303,15 +312,14 @@ b2u.addEventListener("input", function() {
     // EVEN SECONDS ARE DEFINE BY sType (1)
     // ODD SECONDS ARE DEFINE BY sType (2)
 
-    // Sort out the main array data[] and inject each 3 values into another array. There's existing 3 array which depends if it's the second even second or odd. (I called it sType)
-    var pickerValue = function (array, sType = '1') {
-        if (sType === 1) {
+    function pickerValue(array, sType) {
+        if (sType === 1){
             for (var starterOne = 0; starterOne < 30; starterOne += 3) {
                 storageOne.push(array[starterOne]);
-            };
+            }
             for (var starterTwo = 1; starterTwo <= 30; starterTwo += 3) {
                 storageTwo.push(array[starterTwo]);
-            };
+            }
             for (var starterThree = 2; starterThree <= 30; starterThree += 3) {
                 storageThree.push(array[starterThree]);
             }
@@ -319,10 +327,10 @@ b2u.addEventListener("input", function() {
         } else if (sType === 2) {
             for (var starterOne = 0; starterOne < 30; starterOne += 3) {
                 storageOne2.push(array[starterOne]);
-            };
+            }
             for (var starterTwo = 1; starterTwo <= 30; starterTwo += 3) {
                 storageTwo2.push(array[starterTwo]);
-            };
+            }
             for (var starterThree = 2; starterThree <= 30; starterThree += 3) {
                 storageThree2.push(array[starterThree]);
             }
@@ -344,7 +352,7 @@ b2u.addEventListener("input", function() {
 
 
     // By using this function, we delete all values from storageOne, storageTwo, storageThree, and their newer arrays by selecting sType as 2.  
-    var cleanUpArray = function (sType = '1') {
+    var cleanUpArray = function (sType) {
         if (sType === 1) {
             storageOne.length = 0;
             storageTwo.length = 0;
@@ -357,7 +365,7 @@ b2u.addEventListener("input", function() {
     };
 
     // Doing the two precedent thing in one time. 
-    var doAll = function (array, sType = '1') {
+    var doAll = function (array, sType) {
         if (sType === 1) {
             pickerValue(array, 1);
 
@@ -397,7 +405,7 @@ b2u.addEventListener("input", function() {
 
 
     // This lightup our colours, howMuch can take values from 0 to 5, and avg is the focusAverage we want to change. 
-    var LightUp = function (howMuch = '0', avg) {
+    var LightUp = function (howMuch, avg) {
         var resultLightUp = avg;
         if (howMuch >= 0 && howMuch <= 5) {
             resultLightUp = avg * howMuch;
@@ -410,7 +418,7 @@ b2u.addEventListener("input", function() {
     };
 
     // I want to construct my rgb color. 
-    var constructColor = function (sType = '1') {
+    var constructColor = function (sType) {
         if (sType === 1) {
             avgFirst[0] = LightUp(r1u.value, avgFirst[0]);
             avgFirst[1] = LightUp(g1u.value, avgFirst[1]);
@@ -492,7 +500,6 @@ b2u.addEventListener("input", function() {
         analyser.connect(ctx.destination);
     });
     update();
-
 });
 
 
