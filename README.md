@@ -41,13 +41,16 @@ Actually, it's not running on mobile devices.
 In view of the IE not supporting Web Audio API (http://caniuse.com/#feat=audio-api), soundColor not working in IE. Sorry. (but if someone use IE, please, help the world, and tell him about Mozilla).
 
 If it's not running on Chrome, you can delete the 
-> crossorigin="anonymous" 
+> crossorigin="anonymous"
+
 into the audio tag (index.html page). 
 
 If you have this errror :
 > MediaElementAudioSource outputs zeroes due to CORS access restrictions for file://yourfile
+
 run your chrome with this command 
->chrome.exe --disable-web-security 
+
+> chrome.exe --disable-web-security 
 
 
 ### Special thanks
