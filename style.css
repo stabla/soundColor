@@ -82,10 +82,10 @@ a {
     padding: 14px;
     background: hsla(38, 48%, 95%, 1);
     -moz-box-shadow:  1px 1px 3px 0px #656565;
--webkit-box-shadow:  1px 1px 3px 0px #656565;
--o-box-shadow:  1px 1px 3px 0px #656565;
-box-shadow:  1px 1px 3px 0px #656565;
-filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=3);
+    -webkit-box-shadow:  1px 1px 3px 0px #656565;
+    -o-box-shadow:  1px 1px 3px 0px #656565;
+    box-shadow:  1px 1px 3px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=3);
     min-width: 220px;
     position: absolute;
     left: -20px;
@@ -179,11 +179,6 @@ input[type=range]:-moz-focusring{
 input[type=range]:focus::-moz-range-track {
     background: #ccc;
 }
-
-
-
-
-
 
 /*hide the outline behind the border*/
 input[type=range]:-moz-focusring{
