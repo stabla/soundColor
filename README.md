@@ -3,6 +3,8 @@ Under MIT License. Created by me (@idkn).
 
 First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic. 
 
+## Demo
+Live version available here : http://adf.ly/1a7RzF
 
 ## Installation
 ###Into index.html
