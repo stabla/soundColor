@@ -21,21 +21,6 @@ Live version available here : http://goo.gl/Ra24Cf
     Change outPutThreshold (default value is to 50ms) to have a better effects.
     
     var outputThreshold = 50;
-    
-  Currently, you can change the colors in your code, but it's archaic. But you can change colors to by using a slide when the music is on. 
-  Into constructColor function, set the LightUp function as you want. For example, a 
-  
-    Lightup(2, avgFirst[0]); 
-  
-  increase the red color (avgFirst[0] correspond to red) by 2.  LightUp can increase from 0 to 5 max.
-  
-  avgX (it can be avgFirst or avgSecond) is our color. But avgX is an array, and in this array, the first value is red, the second value is green, and the last value is blue. So if you want to modify blue of the second array, change into constructColor function avgSecond[2], but where did I change it you ask yourself, right ?
-  
-  The sType is the second you want to improve, so, into the avgFirst you will the change the even seconds arrays. It's quite difficult to understand, but, to increase by 3 the red color of the even second, change :
-  
-        avgFirst[0] = LightUp(1, avgFirst[0]); 
-    INTO
-         avgFirst[0] = LightUp(3, avgFirst[0]);
 
 #### Errors
 Actually, it's not running on mobile devices.
