@@ -18,9 +18,9 @@ Live version available here : http://goo.gl/Ra24Cf
   
 ###Into js/sound.js
   You can change the value of speed, but I haven't create colors transition yet, so it should be a little bit awful.
-    Change outPutThreshold (default value is to 11ms) to have a better effects.
+    Change outPutThreshold to have a better effects. (but still too many flashes)
     
-    var outputThreshold = 11;
+    var outputThreshold = 50;
 
 #### Errors
 Actually, it's not running on mobile devices.
