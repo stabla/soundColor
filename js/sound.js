@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
 if (isIE) {
   $('.headText').replaceWith("Not available on Internet Explorer (beacause IE not supporting Web Audio API). Make your life easier, better and developper's life, use Mozilla Firefox or whatever else. Thank you!");
@@ -150,4 +152,5 @@ $(function () {
       analyser.connect(ctx.destination);
   });
   update();
+});
 });
