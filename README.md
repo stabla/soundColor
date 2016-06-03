@@ -25,7 +25,7 @@ Live version available here : http://goo.gl/Ra24Cf
 #### Errors
 Actually, it's not running on mobile devices.
 
-In view of the IE not supporting Web Audio API (http://caniuse.com/#feat=audio-api), soundColor not working in IE. Sorry. (but if someone use IE, please, help the world, and tell him about Mozilla).
+In view IE not supporting Web Audio API (http://caniuse.com/#feat=audio-api), soundColor not working in IE. Sorry. (but if someone use IE, please, help the world, and tell him about Mozilla).
 
 If it's not running on Chrome, you can delete the 
 > crossorigin="anonymous"
