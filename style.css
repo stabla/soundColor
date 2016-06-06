@@ -32,8 +32,12 @@ html {
 
 .container {
     position: absolute;
-    left: 20%;
-    top: 24%;
+    width: 980px;
+    min-width: 720px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);    
+    transform: translateX(-50%);
+    top: 30%;
 }
 
 .soundTitle {
