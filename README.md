@@ -1,5 +1,5 @@
 # soundColor
-Under MIT License. Created by me (@idkn).
+Under MIT License. Created by me ( @idkn ).
 
 First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic.
 
@@ -24,7 +24,7 @@ Live version available here : http://goo.gl/Ra24Cf
 
     var outputThreshold = 50;
 
-#### Errors
+### Errors
 Actually, it's not running on mobile devices.
 
 In view IE not supporting Web Audio API (http://caniuse.com/#feat=audio-api), soundColor not working in IE. Sorry. (but if someone use IE, please, help the world, and tell him about Mozilla).
@@ -42,5 +42,5 @@ run your chrome with this command
 > chrome.exe --disable-web-security
 
 
-### Special thanks
+## Special thanks
 I want to thanks Web Audio API developpers. (https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
