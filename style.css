@@ -33,7 +33,7 @@ html {
 .container {
     position: absolute;
     width: 980px;
-    min-width: 720px;
+    min-width: 520px;
     left: 50%;
     -webkit-transform: translateX(-50%);    
     transform: translateX(-50%);
@@ -258,4 +258,8 @@ input[type=range]:focus::-ms-fill-upper {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.inner-container {
+    margin: 0 auto;
 }
