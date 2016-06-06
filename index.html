@@ -1,86 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> soundColor </title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300" rel="stylesheet" type="text/css">
-        <meta name="viewport" content="width=device-width">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="back" id="back"></div>
-        <div id="slider">
+
+<head>
+    <title> soundColor </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="back" id="back"></div>
+    <div id="slider" class="overflowAuto">
         <div class="set">
-        <span class="text">Change the first set of colors :</span>
-        <span class="text" style="color: #474747 !important;"> Press <strong> ESC </strong> to close</span>
-         <div class="s1">
-           <span class="text"> SET LEFT COLORS </span>
-           <div class="clr">
-               <span class=" red">Red : <span id="resR1u"></span></span>
-               <div class="inputDiv">0<input type="range" min="0" max="5" id="r1u" value="1">5</div>
+            <span class="text">Change colors :</span>
+            <br>
+            <span class="text" style="color: #ddd !important;"> Press <strong> ESC </strong> to close</span>
+            <div class="s1 overflowAuto">
+                <span class="text"> SET LEFT COLORS </span>
+                <div class="clr">
+                    <span class=" red">Red : <span id="resR1u"></span></span>
+                    <div class="inputDiv">0
+                        <input type="range" min="0" max="5" id="r1u" value="1">5</div>
 
-           </div>
-           <div class="clr">
-               <span class=" green">Green : <span id="resG1u"></span></span>
-               <div class="inputDiv">0<input type="range" min="0" max="5" id="g1u" value="1">5</div>
+                </div>
+                <div class="clr">
+                    <span class=" green">Green : <span id="resG1u"></span></span>
+                    <div class="inputDiv">0
+                        <input type="range" min="0" max="5" id="g1u" value="1">5</div>
 
-           </div>
-           <div class="clr">
-               <span class=" blue">Blue : <span id="resB1u"></span></span>
-               <div class="inputDiv">0<input type="range" min="0" max="5" id="b1u" value="1">5</div>
+                </div>
+                <div class="clr">
+                    <span class=" blue">Blue : <span id="resB1u"></span></span>
+                    <div class="inputDiv">0
+                        <input type="range" min="0" max="5" id="b1u" value="1">5</div>
 
-           </div>
+                </div>
 
-         </div>
-         <div class="s2 ">
-           <span class="text"> SET RIGHT COLORS </span>
-           <div class="clr">
-               <span class=" red">Red : <span id="resR2u"></span></span>
-               <div class="inputDiv">
-                 0<input type="range" min="0" max="5" id="r2u" value="1">5
-               </div>
+            </div>
+            <div class="s2 overflowAuto">
+                <span class="text"> SET RIGHT COLORS </span>
+                <div class="clr">
+                    <span class=" red">Red : <span id="resR2u"></span></span>
+                    <div class="inputDiv">
+                        0
+                        <input type="range" min="0" max="5" id="r2u" value="1">5
+                    </div>
 
-           </div>
-           <div class="clr">
-               <span class=" green">Green : <span id="resG2u"></span></span>
-               <div class="inputDiv">
-                  0<input type="range" min="0" max="5" id="g2u" value="1">5
-               </div>
+                </div>
+                <div class="clr">
+                    <span class=" green">Green : <span id="resG2u"></span></span>
+                    <div class="inputDiv">
+                        0
+                        <input type="range" min="0" max="5" id="g2u" value="1">5
+                    </div>
 
-           </div>
-           <div class="clr">
-               <span class=" blue">Blue : <span id="resB2u"></span></span>
-               <div class="inputDiv">
-                  0<input type="range" min="0" max="5" id="b2u" value="1">5
-               </div>
-           </div>
-         </div>
-      </div>
-  </div>
-       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="trigger" class="menu" version="1.1" viewbox="0 0 24 24" enable-background="new 0 0 24 24">
-  <g>
-    <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" fill="#FFFFFF"></path>
-    <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" fill="#FFFFFF"></path>
-    <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" fill="#FFFFFF"></path>
-  </g>
-</svg>
-        <div class="enteringSound">
-            <p class="headText blank" style="color= #000;">
-                    Sound : Hans Zimmer - Gotham's Reckoning
-             </p>
+                </div>
+                <div class="clr">
+                    <span class=" blue">Blue : <span id="resB2u"></span></span>
+                    <div class="inputDiv">
+                        0
+                        <input type="range" min="0" max="5" id="b2u" value="1">5
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="trigger" class="menu" version="1.1" viewbox="0 0 24 24" enable-background="new 0 0 24 24">
+        <g>
+            <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" fill="#FFFFFF"></path>
+            <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" fill="#FFFFFF"></path>
+            <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" fill="#FFFFFF"></path>
+        </g>
+    </svg>
+    <div class="container">
+
+
+        <div class="soundTitle">
+            <p class="blank" style="color= #000;">
+                Sound : Guillaume de la Chapelle - Tango des squelettes
+            </p>
         </div>
         <div class="player-audio">
-            <audio controls="controls" src="song/skeletontango.mp3" id="player" ></audio>
+            <audio controls="controls" src="song/skeletontango.mp3" id="player"></audio>
         </div>
-        <div class="author blank">
+    </div>
+    <div class="author blank">
 
-            <a href="https://github.com/idkn/soundColor"> Github <svg version="1.1" id="git-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <a href="https://github.com/idkn/soundColor"> Github <svg version="1.1" id="git-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="90px" height="90px" viewbox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
 <g>
-	<path id="Github__x28_alt_x29_" d="M65.709,10.5c1.17,2.657,1.928,7.07,0.797,10.301c4.625,3.949,6.215,13.549,3.982,21.394
+	<path d="M65.709,10.5c1.17,2.657,1.928,7.07,0.797,10.301c4.625,3.949,6.215,13.549,3.982,21.394
 		C77.08,42.698,84.932,41.953,90,43.976c-4.738-0.609-11.209-1.804-17.32-1.388c-1.158,0.079-2.873-0.044-2.789,1.585
 		c7.074,0.555,14.104,1.16,19.912,2.973c-5.761-0.941-12.754-2.375-19.912-2.574c-2.957,5.835-8.908,8.703-17.123,9.307
 		c0.883,1.922,2.574,2.653,2.987,5.744c0.616,4.618-0.964,11.381,0.595,14.459c0.748,1.475,1.967,1.514,2.789,2.775
@@ -99,8 +113,9 @@
 </svg></a>
 
 
-        </div>
-        <script src="js/slider.js"></script>
-        <script src="js/sound.js"></script>
-    </body>
+    </div>
+    <script src="js/hiddenPanel.js"></script>
+    <script src="js/sound.js"></script>
+</body>
+
 </html>

@@ -1,31 +1,13 @@
-html, body {
+html,
+body {
     box-sizing: border-box;
-}
-
-.player-audio {
-    position: relative;
-    z-index: 10;
-    width: 300px;
-    min-width: 300px;
-    margin: 0 auto;
-}
-
-.back {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    z-index: -999;
-    right: 0;
-    top: 0; 
-    padding: 0;
-    margin: 0;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0; 
-    background-color: #fff;
+    padding: 0;
+    background-color: #ccc;
     color: #000;
     font-weight: 100;
     height: 100%;
@@ -37,14 +19,36 @@ html {
     width: 100%;
 }
 
-.enteringSound {
+.back {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: -999;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    left: 20%;
+    top: 24%;
+}
+
+.soundTitle {
     margin-top: 80px;
     text-align: center;
     position: relative;
+    font-size: 2.3em;
 }
 
-.headText {
-    font-size: 2.3em;
+.player-audio {
+    position: relative;
+    z-index: 10;
+    width: 300px;
+    min-width: 300px;
+    margin: 0 auto;
 }
 
 #git-logo {
@@ -64,46 +68,47 @@ a {
 }
 
 .author {
-    width : 100px;
+    width: 100px;
     margin: 10px;
     position: absolute;
     right: 0;
     bottom: 0;
 }
 
-.s1, .s2 {
+.s1,
+.s2 {
     margin-top: 20px;
 }
 
 .set {
     width: 240px;
     height: 100%;
-    border-radius: 1px;
     padding: 14px;
-    background: hsla(38, 48%, 95%, 1);
-    -moz-box-shadow:  1px 1px 3px 0px #656565;
-    -webkit-box-shadow:  1px 1px 3px 0px #656565;
-    -o-box-shadow:  1px 1px 3px 0px #656565;
-    box-shadow:  1px 1px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=3);
     min-width: 220px;
-    position: absolute;
-    left: -20px;
-    visibility: hidden;
+    color: #fff;
 }
 
 .clr {
     float: right;
     width: 180px;
-    margin-left: 40px;
+    margin-left: 20px;
+}
+
+#resR1u,
+#resG1u,
+#resB1u,
+#resR2u,
+#resG2u,
+#resB2u {
+    font-weight: 600;
 }
 
 .red {
     color: red;
 }
 
-.green { 
-    color: green;
+.green {
+    color: #1abc9c;
 }
 
 .blue {
@@ -114,11 +119,12 @@ a {
     margin-left: 20px;
 }
 
-input[type=range]{
+input[type=range] {
     -webkit-appearance: none;
-        /* fix for FF unable to apply focus style bug  */ 
+    /* fix for FF unable to apply focus style bug  */
     margin: 0px 7px;
     position: relative;
+    background: #fff;
     top: 0;
     right: 0;
     padding: 0;
@@ -128,8 +134,8 @@ input[type=range]{
 
 input[type=range]::-webkit-slider-runnable-track {
     width: 130px;
-    height: 2px;
-    background: #141414;
+    height: 20px;
+    background: #fff;
     border: none;
     border-radius: 3px;
 }
@@ -137,11 +143,10 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
-    height: 14px;
-    width: 14px;
+    height: 20px;
+    width: 2px;
     border-radius: 50%;
-    background: #aaa;
-    margin-top: -6px;
+    background: black;
 }
 
 input[type=range]:focus {
@@ -151,8 +156,6 @@ input[type=range]:focus {
 input[type=range]:focus::-webkit-slider-runnable-track {
     background: #ccc;
 }
-
-
 
 input[type=range]::-moz-range-track {
     width: 130px;
@@ -170,8 +173,10 @@ input[type=range]::-moz-range-thumb {
     background: #aaa;
 }
 
+
 /*hide the outline behind the border*/
-input[type=range]:-moz-focusring{
+
+input[type=range]:-moz-focusring {
     outline: 1px solid white;
     outline-offset: -1px;
 }
@@ -180,8 +185,10 @@ input[type=range]:focus::-moz-range-track {
     background: #ccc;
 }
 
+
 /*hide the outline behind the border*/
-input[type=range]:-moz-focusring{
+
+input[type=range]:-moz-focusring {
     outline: 1px solid white;
     outline-offset: -1px;
 }
@@ -194,25 +201,25 @@ input[type=range]:focus::-moz-range-track {
 input[type=range]::-ms-track {
     width: 300px;
     height: 5px;
-    
     /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;
-    
     /*leave room for the larger thumb to overflow with a transparent border */
     border-color: transparent;
     border-width: 6px 0;
-
     /*remove default tick marks*/
     color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
     background: #777;
     border-radius: 10px;
 }
+
 input[type=range]::-ms-fill-upper {
     background: #bbb;
     border-radius: 10px;
 }
+
 input[type=range]::-ms-thumb {
     border: none;
     height: 16px;
@@ -220,15 +227,31 @@ input[type=range]::-ms-thumb {
     border-radius: 50%;
     background: #fff;
 }
+
 input[type=range]:focus::-ms-fill-lower {
     background: #888;
 }
+
 input[type=range]:focus::-ms-fill-upper {
     background: #ccc;
+}
+
+.overflowAuto {
+    overflow: auto;
+}
+
+#slider {
+    width: 320px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.095);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    display: none;
 }
 
 .menu {
     height: 30px;
     margin: 10px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
