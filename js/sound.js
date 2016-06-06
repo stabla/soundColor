@@ -20,10 +20,10 @@ $(function () {
   }
   // Create the analyser
   var analyser = ctx.createAnalyser();
-  analyser.fftSize = 64;
+  analyser.fftSize = 1024;
   var data = new Uint8Array(analyser.frequencyBinCount);
-    
-    
+
+
   // All var needed outside the functions
   var storage = [[], [], []];
   var avg = [];
@@ -34,9 +34,9 @@ $(function () {
   var outputThreshold = 50; // in milliseconds
   var lastOutput = new Date().valueOf() - outputThreshold; // Setting this to 0 initially will ensure it runs immediately, sry not anymore
   var showMessageCounter = 0; // Setting this to 0 to have switching message
-  
+
   var colorModifiers = {};
-  
+
   $('.inputDiv input')
     .on('input', function(){
       $(this)
@@ -53,7 +53,7 @@ $(function () {
 
 
   function pickerValue(array) {
-    for (var i = 0; i < 10; i ++) {
+    for (var i = 0; i < 170; i ++) {
         storage[0][i] = array[3*i];
         storage[1][i] = array[3*i+1];
         storage[2][i] = array[3*i+2];
@@ -70,21 +70,21 @@ $(function () {
       if (array.length) {
           average = sum / array.length;
       }
-      
+
       var res = Math.round(average);
       return res >= 255 ? 255 : res;
   };
-  
-  // Doing the two precedent thing in one time. 
+
+  // Doing the two precedent thing in one time.
   var doAll = function (array) {
-    
+
     pickerValue(array);
     avg = storage.map(calcAvg);
-    
+
   };
 
 
-  // This lightup our colours, howMuch can take values from 0 to 5, and avg is the focusAverage we want to change. 
+  // This lightup our colours, howMuch can take values from 0 to 5, and avg is the focusAverage we want to change.
   var LightUp = function (howMuch, avg) {
       var resultLightUp = avg;
       if (howMuch >= 0 && howMuch <= 5) {
@@ -100,13 +100,13 @@ $(function () {
   ///////// FUNCTIONS LIBRARY /////////
   // EVEN SECONDS ARE DEFINE BY sType (1)
   // ODD SECONDS ARE DEFINE BY sType (2)
-  // I want to construct my rgb color. 
+  // I want to construct my rgb color.
   var constructColor = function (sType) {
-    
+
     r = LightUp(colorModifiers['r'+(sType)+'u'], avg[0]);
     g = LightUp(colorModifiers['g'+(sType)+'u'], avg[1]);
     b = LightUp(colorModifiers['b'+(sType)+'u'], avg[2]);
-    
+
     colors[sType] = "rgb(" + r + "," + g + "," + b + ")";
   };
 
@@ -121,15 +121,15 @@ $(function () {
         return;
       }
       if (new Date().valueOf() - lastOutput <= outputThreshold) {
-        return;
+          console.log(storage[0]);
       }
-      
+
       doAll(data);
-      
+
       constructColor(showMessageCounter % 2 + 1);
-      
+
       showMessageCounter++;
-      
+
       lastOutput = new Date().valueOf();
 
       $('#back').css({
@@ -141,7 +141,7 @@ $(function () {
       $('.blank, a').css({
           color: "#fff"
       });
-      
+
   };
 
   // player -> analyser -> speakers
