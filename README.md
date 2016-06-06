@@ -3,6 +3,9 @@ Under MIT License. Created by me (@idkn).
 
 First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic.
 
+## How it work
+With Web Audio Api, I can get fft (fast fourier transform) and transform it into colors.
+
 ## Demo
 Live version available here : http://goo.gl/Ra24Cf
 
@@ -13,7 +16,6 @@ Live version available here : http://goo.gl/Ra24Cf
     src="song/YourSong.mp3"
 
   You can change the name of the artist and the name of the song on index.html, but that's not necessary.
-
 
 
 ###Into js/sound.js
@@ -41,6 +43,4 @@ run your chrome with this command
 
 
 ### Special thanks
-I want to thanks Web Audio API developpers.
-
-[SlideReveal]((http://nnattawat.github.io/slideReveal/) of @nnattawat is really usefull
+I want to thanks Web Audio API developpers. (https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
