@@ -247,15 +247,18 @@ input[type=range]:focus::-ms-fill-upper {
 #slider {
     width: 320px;
     height: 100%;
-    background: rgba(0, 0, 0, 0.095);
-    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.24);
     display: none;
+    position: relative;
+    z-index: 50;
 }
 
 .menu {
     height: 30px;
     margin: 10px;
     position: absolute;
+    z-index: 51;
     top: 0;
     left: 0;
 }
