@@ -7,7 +7,7 @@ First, I want to say to you to think about that's my first rep on git, and I wan
 With Web Audio Api, I can get fft (fast fourier transform) and transform it into colors.
 
 ## Demo
-Live version available here : http://goo.gl/Ra24Cf
+Live version available here: https://idkn.github.io/soundColor/
 
 ## Installation
 ###Into index.html
