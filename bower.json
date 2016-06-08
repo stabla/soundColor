@@ -1,0 +1,24 @@
+{
+  "name": "soundcolor",
+  "homepage": "https://github.com/idkn/soundColor",
+  "authors": [
+    "idkn <giomebs@gmail.com>"
+  ],
+  "description": "Make reacting colors on song",
+  "main": "index.html",
+  "keywords": [
+    "sound",
+    "color",
+    "javascript",
+    "webaudioapi"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
