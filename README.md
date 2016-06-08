@@ -11,7 +11,8 @@ Live version available here: https://idkn.github.io/soundColor/
 
 ## Download
 You can install via bower
-> bower install soundcolor
+
+    bower install soundcolor
 
 ## Installation
 ###Into index.html
