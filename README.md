@@ -9,6 +9,10 @@ With Web Audio Api, I can get fft (fast fourier transform) and transform it into
 ## Demo
 Live version available here: https://idkn.github.io/soundColor/
 
+## Download
+You can install via bower
+> bower install soundcolor
+
 ## Installation
 ###Into index.html
   define your audio source, and place your sound into song/ folder. :
