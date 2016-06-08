@@ -10,7 +10,7 @@ With Web Audio Api, I can get fft (fast fourier transform) and transform it into
 Live version available here: https://idkn.github.io/soundColor/
 
 ## Download
-You can install via bower
+You can download it via bower
 
     bower install soundcolor
 
