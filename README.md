@@ -34,10 +34,6 @@ Actually, it's not running on mobile devices.
 
 In view IE not supporting Web Audio API (http://caniuse.com/#feat=audio-api), soundColor not working in IE. Sorry. (but if someone use IE, please, help the world, and tell him about Mozilla).
 
-
-
-
-
 If it's not running on Chrome, you can delete the
 > crossorigin="anonymous"
 
@@ -50,6 +46,8 @@ run your chrome with this command
 
 > chrome.exe --disable-web-security
 
+
+For any question, open an issue.
 
 ## Special thanks
 I want to thanks Web Audio API developpers. (https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
