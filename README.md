@@ -16,7 +16,7 @@ You can download it via bower
 
 ## Installation
 ###Into index.html
-  define your audio source, and place your sound into song/ folder. :
+  define your audio source, and place your sound into song/ folder :
 
     src="song/YourSong.mp3"
 
