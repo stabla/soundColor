@@ -51,16 +51,19 @@ if (isIE) {
 //      colorModifiers[$(this)[0].id] = $(this).val();
 //    });
 
-     var x = d.getElementsByClassName('inputDiv');
-    x.addEventListener("input", function() {
+
+   function colorsModifiers() {
         this.parentElement.previousElementSibling.querySelectorAll('span').textContent(this.valueOf);
-        colorModifiers[this[0].id] = this.valueOf;
-    }).forEach(function() {
-        colorModifiers[this[0].id] = this.valueOf;
-    });
+    colorModifiers[this[0].id] = this.valueOf;
+   }
+        
+    var x = d.getElementsByClassName('inputDiv').getElementsByTagName('input');
+    for(var i=0; i<btn.length; i++) {
+        x[i].getElementsByTagName('input').addEventListener("input", colorsModifiers()).forEach(function() {
+            colorModifiers[this[0].id] = this.valueOf;
+        })
+    }
 
-
-    
 // initialize necessary functions to do job
   function pickerValue(array) {
     for (var i = 0; i < 170; i ++) {
