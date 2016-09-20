@@ -51,7 +51,7 @@ if (isIE) {
 //      colorModifiers[$(this)[0].id] = $(this).val();
 //    });
 
-    d.getElementsByClassName('inputDiv').getElementsByTagName('input').addEventListener('input', function() {
+    d.querySelectorAll('.inputDiv input').addEventListener('input', function() {
         this.parentElement.previousElementSibling.querySelectorAll('span').textContent(this.valueOf);
         colorModifiers[this[0].id] = this.valueOf;
     }).forEach(function() {
