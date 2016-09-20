@@ -57,12 +57,14 @@ if (isIE) {
     colorModifiers[this[0].id] = this.valueOf;
    }
         
-    var x = d.getElementsByClassName('inputDiv').getElementsByTagName('input');
+    var x = d.getElementsByClassName('inputDiv');
     for(var i=0; i<btn.length; i++) {
         x[i].getElementsByTagName('input').addEventListener("input", colorsModifiers()).forEach(function() {
             colorModifiers[this[0].id] = this.valueOf;
         })
     }
+
+
 
 // initialize necessary functions to do job
   function pickerValue(array) {
