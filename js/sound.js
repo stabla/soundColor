@@ -156,5 +156,5 @@ d.getElementById('player').addEventListener("oncanplaythrough", function () {
       analyser.connect(ctx.destination);
   });
   update();
-});
+}) ()
 }, false);
