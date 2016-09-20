@@ -58,7 +58,7 @@ if (isIE) {
    }
         
     var x = d.getElementsByClassName('inputDiv');
-    for(var i=0; i<btn.length; i++) {
+    for(var i=0; i<x.length; i++) {
         x[i].getElementsByTagName('input').addEventListener("input", colorsModifiers()).forEach(function() {
             colorModifiers[this[0].id] = this.valueOf;
         })
