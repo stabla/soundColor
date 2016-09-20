@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){ 
-
+    
 const d = document;
 var isIE = /*@cc_on!@*/false || !!d.documentMode;
 if (isIE) {
@@ -156,5 +156,5 @@ d.getElementById('player').addEventListener("oncanplaythrough", function () {
       analyser.connect(ctx.destination);
   });
   update();
-}) ()
-}, false);
+}) ();
+});
