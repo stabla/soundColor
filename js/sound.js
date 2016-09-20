@@ -52,7 +52,7 @@ if (isIE) {
 //    });
 
      var x = d.getElementsByClassName('inputDiv');
-    x.getElementsByTagName('input').addEventListener("input", function() {
+    x.addEventListener("input", function() {
         this.parentElement.previousElementSibling.querySelectorAll('span').textContent(this.valueOf);
         colorModifiers[this[0].id] = this.valueOf;
     }).forEach(function() {
