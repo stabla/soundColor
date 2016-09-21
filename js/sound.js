@@ -25,17 +25,16 @@ $(function () {
 
 
   // All var needed outside the functions
-  var storage = [[], [], []];
-  var avg = [];
-  var average = 0;
-  var r, g, b;
-  var colors = [];
+  var storage = [[], [], []],
+      avg = [],
+      average = 0,
+      r, g, b,
+      colors = [];
 
-  var outputThreshold = 50; // in milliseconds
-  var lastOutput = new Date().valueOf() - outputThreshold; // Setting this to 0 initially will ensure it runs immediately, sry not anymore
-  var showMessageCounter = 0; // Setting this to 0 to have switching message
-
-  var colorModifiers = {};
+  var outputThreshold = 50, // in milliseconds
+      lastOutput = new Date().valueOf() - outputThreshold, // Setting this to 0 initially will ensure it runs immediately, sry not anymore
+      showMessageCounter = 0, // Setting this to 0 to have switching message
+      colorModifiers = {};
 
   $('.inputDiv input')
     .on('input', function(){
@@ -50,8 +49,7 @@ $(function () {
       colorModifiers[$(this)[0].id] = $(this).val();
     });
 
-
-
+///////// FUNCTIONS LIBRARY /////////
   function pickerValue(array) {
     for (var i = 0; i < 170; i ++) {
         storage[0][i] = array[3*i];
@@ -83,7 +81,6 @@ $(function () {
 
   };
 
-
   // This lightup our colours, howMuch can take values from 0 to 5, and avg is the focusAverage we want to change.
   var LightUp = function (howMuch, avg) {
       var resultLightUp = avg;
@@ -97,7 +94,6 @@ $(function () {
       }
   };
 
-  ///////// FUNCTIONS LIBRARY /////////
   // EVEN SECONDS ARE DEFINE BY sType (1)
   // ODD SECONDS ARE DEFINE BY sType (2)
   // I want to construct my rgb color.
