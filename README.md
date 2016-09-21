@@ -1,5 +1,5 @@
 # soundColor
-Under MIT License.
+Under MIT License. Created by me ( @idkn ).
 
 First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic.
 
@@ -10,7 +10,7 @@ With Web Audio Api, I can get fft (fast fourier transform) and transform it into
 Live version available here: https://idkn.github.io/soundColor/
 
 ## Download
-You can download it via bower (but you will get the gh-pages version of soundColor)
+You can download it via bower
 
     bower install soundcolor
 
@@ -39,7 +39,7 @@ If it's not running on Chrome, you can delete the
 
 into the audio tag (index.html page).
 
-If you have this errror :
+If you have this error :
 > MediaElementAudioSource outputs zeroes due to CORS access restrictions for file://yourfile
 
 run your chrome with this command
@@ -47,9 +47,7 @@ run your chrome with this command
 > chrome.exe --disable-web-security
 
 
-For any question, open an issue.
-
 ## Special thanks
 I want to thanks Web Audio API developpers. (https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 
-Thanks to @blacksponge 
+Thanks to [@blacksponge](https://github.com/blacksponge)
