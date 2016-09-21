@@ -54,14 +54,14 @@ if (isIE) {
 
    function colorsModifiers() {
         //this.parentElement.previousElementSibling.querySelectorAll('span').textContent(this.valueOf);
-    colorModifiers[this[0].id] = this.valueOf;
+    colorModifiers[this.id] = this.valueOf;
     console.log(this.valueOf);
    }
         
     var x = d.getElementsByClassName('inputDiv');
     for(var i=0; i<x.length; i++) {
         x[i].getElementsByTagName('input').addEventListener("input", colorsModifiers()).forEach(function() {
-            colorModifiers[this[0].id] = this.valueOf;
+            colorModifiers[this.id] = this.valueOf;
         })
     }
 
