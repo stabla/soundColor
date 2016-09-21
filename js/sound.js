@@ -53,8 +53,9 @@ if (isIE) {
 
 
    function colorsModifiers() {
-        this.parentElement.previousElementSibling.querySelectorAll('span').textContent(this.valueOf);
+        //this.parentElement.previousElementSibling.querySelectorAll('span').textContent(this.valueOf);
     colorModifiers[this[0].id] = this.valueOf;
+    console.log(this.valueOf);
    }
         
     var x = d.getElementsByClassName('inputDiv');
