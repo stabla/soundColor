@@ -31,10 +31,10 @@ $(function () {
       r, g, b,
       colors = [];
 
-  var outputThreshold = 50, // in milliseconds
-      lastOutput = new Date().valueOf() - outputThreshold, // Setting this to 0 initially will ensure it runs immediately, sry not anymore
-      showMessageCounter = 0, // Setting this to 0 to have switching message
-      colorModifiers = {};
+  var outputThreshold = 50; // in milliseconds
+  var lastOutput = new Date().valueOf() - outputThreshold; // Setting this to 0 initially will ensure it runs immediately, sry not anymore
+  var showMessageCounter = 0; // Setting this to 0 to have switching message
+  var  colorModifiers = {};
 
   $('.inputDiv input')
     .on('input', function(){
@@ -50,6 +50,7 @@ $(function () {
     });
 
 ///////// FUNCTIONS LIBRARY /////////
+// Each function of this code is useful. 
   function pickerValue(array) {
     for (var i = 0; i < 170; i ++) {
         storage[0][i] = array[3*i];
