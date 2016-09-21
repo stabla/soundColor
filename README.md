@@ -39,7 +39,7 @@ If it's not running on Chrome, you can delete the
 
 into the audio tag (index.html page).
 
-If you have this errror :
+If you have this error :
 > MediaElementAudioSource outputs zeroes due to CORS access restrictions for file://yourfile
 
 run your chrome with this command
