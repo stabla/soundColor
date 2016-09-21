@@ -1,14 +1,12 @@
-document.addEventListener('DOMContentLoaded', function(){ 
-    
-const d = document;
-var isIE = /*@cc_on!@*/false || !!d.documentMode;
+$(document).ready(function() {
+
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
 if (isIE) {
-  d.getElementsByClassName('headText').outerHTML = "Not available on Internet Explorer (beacause IE not supporting Web Audio API). Make your life and developper's life easier, use Mozilla Firefox or whatever else. Thank you!";
-  d.getElementsByTagName('audio').style.display = 'none';
+  $('.headText').replaceWith("Not available on Internet Explorer (beacause IE not supporting Web Audio API). Make your life easier, better and developper's life, use Mozilla Firefox or whatever else. Thank you!");
+  $('audio').hide();
 }
 
-(function() {
-    console.log('la');
+$(function () {
   var ctx;
   if (typeof AudioContext !== "undefined") {
       ctx = new AudioContext();
@@ -16,8 +14,8 @@ if (isIE) {
       ctx = new webkitAudioContext();
 
   } else {
-      d.getElementsByClassName('hideIfNoApi').style.display = 'none';
-      d.getElementsByClassName('showIfNoApi').style.display = 'block';
+      $(".hideIfNoApi").hide();
+      $(".showIfNoApi").show();
       return;
   }
   // Create the analyser
@@ -27,34 +25,33 @@ if (isIE) {
 
 
   // All var needed outside the functions
-  var storage = [[], [], []],
-      avg = [],
-      average = 0,
-      r, g, b,
-      colors = [];
+  var storage = [[], [], []];
+  var avg = [];
+  var average = 0;
+  var r, g, b;
+  var colors = [];
 
-  const outputThreshold = 50; // in milliseconds
-  var lastOutput = new Date().valueOf() - outputThreshold, // Setting this to 0 initially will ensure it runs immediately, sry not anymore
-      showMessageCounter = 0, // Setting this to 0 to have switching message
-      colorModifiers = {};
+  var outputThreshold = 50; // in milliseconds
+  var lastOutput = new Date().valueOf() - outputThreshold; // Setting this to 0 initially will ensure it runs immediately, sry not anymore
+  var showMessageCounter = 0; // Setting this to 0 to have switching message
 
-//  $('.inputDiv input')
-//    .on('input', function(){
-//      $(this)
-//        .parent()
-//        .prev()
-//        .find('span')
-//        .text($(this).val());
-//      colorModifiers[$(this)[0].id] = $(this).val();
-//    })
-//    .each(function(){
-//      colorModifiers[$(this)[0].id] = $(this).val();
-//    });
+  var colorModifiers = {};
+
+  $('.inputDiv input')
+    .on('input', function(){
+      $(this)
+        .parent()
+        .prev()
+        .find('span')
+        .text($(this).val());
+      colorModifiers[$(this)[0].id] = $(this).val();
+    })
+    .each(function(){
+      colorModifiers[$(this)[0].id] = $(this).val();
+    });
 
 
 
-
-// initialize necessary functions to do job
   function pickerValue(array) {
     for (var i = 0; i < 170; i ++) {
         storage[0][i] = array[3*i];
@@ -62,6 +59,7 @@ if (isIE) {
         storage[2][i] = array[3*i+2];
     }
   };
+
   // Calculate the average of array. Very useful to calcul the average of my one seconde's three arrays.
   var calcAvg = function (array) {
       var sum = 0;
@@ -76,6 +74,7 @@ if (isIE) {
       var res = Math.round(average);
       return res >= 255 ? 255 : res;
   };
+
   // Doing the two precedent thing in one time.
   var doAll = function (array) {
 
@@ -83,6 +82,8 @@ if (isIE) {
     avg = storage.map(calcAvg);
 
   };
+
+
   // This lightup our colours, howMuch can take values from 0 to 5, and avg is the focusAverage we want to change.
   var LightUp = function (howMuch, avg) {
       var resultLightUp = avg;
@@ -95,12 +96,11 @@ if (isIE) {
           }
       }
   };
-    
-  /*
-     EVEN SECONDS ARE DEFINE BY sType (1)
-     ODD SECONDS ARE DEFINE BY sType (2)
-     I want to construct my rgb color.
-  */
+
+  ///////// FUNCTIONS LIBRARY /////////
+  // EVEN SECONDS ARE DEFINE BY sType (1)
+  // ODD SECONDS ARE DEFINE BY sType (2)
+  // I want to construct my rgb color.
   var constructColor = function (sType) {
 
     r = LightUp(colorModifiers['r'+(sType)+'u'], avg[0]);
@@ -131,24 +131,26 @@ if (isIE) {
       showMessageCounter++;
 
       lastOutput = new Date().valueOf();
-      
-      const d_back = d.getElementById('back');
-        d_back.style.background = "-webkit-gradient(linear, left top, right top, from(" + colors[1] + "), to(" + colors[2] + "))";
-        d_back.style.background = "-moz-linear-gradient(left, " + colors[1] + " 0%, " + colors[2] + " 100%)";
 
-      d.getElementsByClassName('blank').style.color = '#fff';
-      d.getElementsByTagName('a').style.color = '#fff';
+      $('#back').css({
+          background: "-webkit-gradient(linear, left top, right top, from(" + colors[1] + "), to(" + colors[2] + "))"
+      }).css({
+          background: "-moz-linear-gradient(left, " + colors[1] + " 0%, " + colors[2] + " 100%)"
+      });
+
+      $('.blank, a').css({
+          color: "#fff"
+      });
 
   };
 
   // player -> analyser -> speakers
   // (Do this after the player is ready to play - https://code.google.com/p/chromium/issues/detail?id=112368#c4)
-d.getElementById('player').addEventListener("oncanplaythrough", function () {
+  $("#player").bind('canplay', function () {
       var src = ctx.createMediaElementSource(this);
       src.connect(analyser);
-    console.log('here');
       analyser.connect(ctx.destination);
   });
   update();
-}) ();
+});
 });
