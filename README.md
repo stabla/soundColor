@@ -4,7 +4,7 @@ Under MIT License. Created by me ( @idkn ).
 First, I want to say to you to think about that's my first rep on git, and I want to improve myself, I accept any advice or critic.
 
 ## How it work
-With Web Audio Api, I can get fft (fast fourier transform) and transform it into colors.
+Some magic with Web Audio API and fft (fast fourier transform). In fact, it's more about array's manipulation than magic. 
 
 ## Demo
 Live version available here: https://idkn.github.io/soundColor/
