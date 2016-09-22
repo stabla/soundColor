@@ -51,7 +51,7 @@ $(function () {
 
 ///////// FUNCTIONS LIBRARY /////////
 // Each function of this code is useful. 
-  function pickerValue(array) {
+  var pickerValue = function (array) {
     for (var i = 0; i < 170; i ++) {
         storage[0][i] = array[3*i];
         storage[1][i] = array[3*i+1];
