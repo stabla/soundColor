@@ -4,7 +4,7 @@ Written in JavaScript.
 I want to improve myself, I accept any advice or critic.
 
 #### Demo
-Live version available here: https://idkn.github.io/soundColor/
+Live version available here: https://stabla.github.io/soundColor/
 
 #### How it works
 Some magic with Web Audio API and fft (fast fourier transform). In fact, it's more about array's manipulation than magic. 
