@@ -20,16 +20,13 @@ $(function () {
   var ctx;
   if (typeof AudioContext !== "undefined") {
       ctx = new AudioContext();
-      console.log('context getted');
   } else if (typeof webkitAudioContext !== "undefined") {
       ctx = new webkitAudioContext();
-      console.log('context not getted');
 
   } else {
       $(".hideIfNoApi").hide();
       $(".showIfNoApi").show();
       
-      console.log('noAudioAPI');
       return;
   }
   // Create the analyser
@@ -127,15 +124,19 @@ $(function () {
       analyser.getByteFrequencyData(data);
       analyser.smoothingTimeConstant = 0.2;
 
-      console.log('in updated');
+      console.log('in update')
       if (!data[0]) {
         return;
+          console.log('data[0]' + data[0])
       }
       if (new Date().valueOf() - lastOutput <= outputThreshold) {
           //console.log(storage[0]);
           
       console.log('getting value');
       }
+      
+      
+      console.log('mdr' + new Date().valueOf() - lastOutput <= outputThreshold)
 
       doAll(data);
 
@@ -162,7 +163,6 @@ $(function () {
   $("#player").bind('canplay', function () {
       var src = ctx.createMediaElementSource(this);
       src.connect(analyser);
-      console.log('bind canplay of #player');
       analyser.connect(ctx.destination);
   });
   update();
