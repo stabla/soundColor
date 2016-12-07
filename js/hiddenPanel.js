@@ -1,10 +1,11 @@
 $(document).ready(function () {
+    var $slider = $('#slider').width();
     $('.menu').on('click', function () {
         $('#slider').fadeToggle();
 
         if ($(this).css('left') == '0px') {
             $(this).animate({
-                'left': '260px'
+                'left': $slider - $slider/5
             }, 200);
         } else {
             $(this).animate({

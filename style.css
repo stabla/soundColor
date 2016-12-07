@@ -4,55 +4,49 @@ body {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
     background-color: #ccc;
     color: #000;
     font-weight: 100;
-    height: 100%;
-}
-
-html {
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
 }
 
 .back {
+    position: absolute;
+    top: 0;
     bottom: 0;
     left: 0;
-    position: absolute;
-    z-index: -999;
     right: 0;
-    top: 0;
-    padding: 0;
-    margin: 0;
+    z-index: -1;
 }
 
 .container {
-    position: absolute;
-    width: 980px;
-    min-width: 520px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);    
-    transform: translateX(-50%);
-    top: 30%;
+    margin-top: 15%;
+    z-index: 1;
 }
 
 .soundTitle {
-    margin-top: 80px;
     text-align: center;
-    position: relative;
-    font-size: 2.3em;
+    font-size: 2rem;
 }
 
 .player-audio {
     position: relative;
-    z-index: 10;
     width: 300px;
-    min-width: 300px;
     margin: 0 auto;
+}
+
+
+/** Logo 
+ */
+.author {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
 }
 
 #git-logo {
@@ -60,7 +54,7 @@ html {
     width: 40px;
     fill: #fff;
     vertical-align: middle;
-    margin-left: 18px;
+    margin-left: 10px;
 }
 
 a {
@@ -71,12 +65,13 @@ a {
     font-size: 0.6em;
 }
 
-.author {
-    width: 100px;
+.menu {
+    height: 30px;
     margin: 10px;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    z-index: 51;
+    top: 0;
+    left: 0;
 }
 
 .s1,
@@ -245,24 +240,12 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #slider {
-    width: 320px;
-    height: 100%;
+    z-index: 2;
+    display: none;
+    position: absolute;
+    width: 280px;
+    left: 0;
+    top: 0;
     background: rgba(0, 0, 0, 0.85);
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.24);
-    display: none;
-    position: relative;
-    z-index: 50;
-}
-
-.menu {
-    height: 30px;
-    margin: 10px;
-    position: absolute;
-    z-index: 51;
-    top: 0;
-    left: 0;
-}
-
-.inner-container {
-    margin: 0 auto;
 }
