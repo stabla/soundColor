@@ -124,7 +124,6 @@ $(function () {
       analyser.getByteFrequencyData(data);
       analyser.smoothingTimeConstant = 0.2;
 
-      console.log('in update')
       if (!data[0]) {
         return;
           console.log('data[0]' + data[0])
@@ -137,6 +136,7 @@ $(function () {
       
       
       console.log('mdr' + new Date().valueOf() - lastOutput <= outputThreshold)
+      console.log('data' + data);
 
       doAll(data);
 
