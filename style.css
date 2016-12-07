@@ -14,6 +14,10 @@ body {
     font-weight: 100;
 }
 
+audio {
+   width: 200px !important;  
+}
+
 .back {
     position: absolute;
     top: 0;
