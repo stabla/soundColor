@@ -45,6 +45,7 @@ html {
     text-align: center;
     position: relative;
     font-size: 2.3em;
+    padding: 20px;
 }
 
 .player-audio {
