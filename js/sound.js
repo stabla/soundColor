@@ -19,8 +19,6 @@ if (isIE) {
         $('.container').find('.soundTitle p').replaceWith('Sorry, but it is not supported by your mobile browser. Come again from a desktop browser. Thank you.');
         
     }
-    
-    console.log(check + ' mdr la ');
 })();    
     
 
