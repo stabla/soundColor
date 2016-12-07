@@ -36,6 +36,8 @@ body {
 .soundTitle {
     text-align: center;
     font-size: 2rem;
+    padding-left: 15px;
+    margin-right: 15px;
 }
 
 .player-audio {
